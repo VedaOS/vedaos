@@ -19,8 +19,6 @@ modules:
         - galileo-mura
         - steamdeck-dsp
         - powerbuttond
-        - hhd
-        - hhd-ui
         - adjustor
         - acpica-tools
         - vpower
@@ -33,7 +31,6 @@ modules:
         - zstd
         - zenity
         - newt
-        - qt6-qtvirtualkeyboard
         - xorg-x11-server-Xvfb
         - python-vdf
         - python-crcmod

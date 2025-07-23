@@ -1,0 +1,12 @@
+---
+# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
+# image will be published to ghcr.io/<user>/<name>
+name: vedaos
+description: This is my personal OS image.
+
+base-image: ghcr.io/ublue-os/cosmic-atomic-main
+# TODO: replace base image with upstream
+image-version: latest
+
+modules:
+  - type: signing

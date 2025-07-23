@@ -50,9 +50,10 @@ modules:
         - extest.i686
         - tailscale
     remove:
-      - firefox
-      - firefox-langpacks
-      - htop
+      packages:
+        - firefox
+        - firefox-langpacks
+        - htop
 
   - type: dnf
     repos:

@@ -10,3 +10,7 @@ image-version: 42
 
 modules:
   - from-file: common.yml
+
+  - type: initramfs
+
+  - type: signing

@@ -1,4 +1,34 @@
 modules:
+  - type: dnf
+    remove:
+      auto-remove: false
+      packages:
+        - kernel
+        - kernel-core
+        - kernel-modules
+        - kernel-modules-core
+        - kernel-modules-extra
+        - kernel-tools
+        - kernel-tools-libs
+        - kernel-uki-virt
+
+  - type: akmods
+    base: bazzite
+    install:
+      - kernel
+      - kernel-core
+      - kernel-modules
+      - kernel-modules-core
+      - kernel-modules-extra
+      - kernel-tools
+      - kernel-tools-libs
+      - kernel-devel
+      - kernel-devel-matched
+
+  - type: script
+    snippets:
+      - "dnf5 versionlock add kernel kernel-devel kernel-devel-matched kernel-core kernel-modules kernel-modules-core kernel-modules-extra kernel-tools kernel-tools-libs"
+
   - type: files
     files:
       - source: system

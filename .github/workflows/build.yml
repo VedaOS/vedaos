@@ -23,7 +23,8 @@ jobs:
       matrix:
         recipe:
           # !! Add your recipes here
-          - recipe.yml
+          - deck.yml
+          - desktop.yml
     steps:
       # the build is fully handled by the reusable github action
       - name: Build Custom Image

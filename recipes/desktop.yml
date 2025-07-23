@@ -10,4 +10,3 @@ image-version: 42
 
 modules:
   - from-file: common.yml
-  

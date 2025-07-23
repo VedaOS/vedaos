@@ -1,0 +1,41 @@
+modules:
+  - type: files
+    files:
+      - source: system
+        destination: /
+
+  - type: script
+    snippets:
+      - "curl -fsSL https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo | tee /etc/yum.repos.d/terra.repo"
+
+  - type: dnf
+    repos:
+      files:
+        - https://negativo17.org/repos/fedora-steam.repo
+    install:
+      install-weak-deps: false
+      packages:
+        - steam
+        - kernel-modules-extra
+        - terra-release
+
+  - type: dnf
+    repos:
+      files:
+        - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
+    install:
+      packages:
+        - extest.i686
+        - tailscale
+
+  - type: script
+    snippets:
+      - "sed -i 's@/usr/bin/steam@/usr/bin/vedaos-steam@g' /usr/share/applications/steam.desktop"
+
+  - type: os-release
+    properties:
+      ID: vedaos
+      NAME: VedaOS
+      PRETTY_NAME: VedaOS 42 (FROM Fedora COSMIC Atomic)
+
+  - type: signing

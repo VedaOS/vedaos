@@ -9,14 +9,8 @@ modules:
       - "curl -fsSL https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo | tee /etc/yum.repos.d/terra.repo"
 
   - type: dnf
-    repos:
-      files:
-        - https://negativo17.org/repos/fedora-steam.repo
     install:
-      install-weak-deps: false
       packages:
-        - steam
-        - kernel-modules-extra
         - terra-release
 
   - type: dnf
@@ -27,6 +21,15 @@ modules:
       packages:
         - extest.i686
         - tailscale
+
+  - type: dnf
+    repos:
+      files:
+        - https://negativo17.org/repos/fedora-steam.repo
+    install:
+      install-weak-deps: false
+      packages:
+        - steam
 
   - type: script
     snippets:
@@ -39,3 +42,4 @@ modules:
       PRETTY_NAME: VedaOS 42 (FROM Fedora COSMIC Atomic)
 
   - type: signing
+  

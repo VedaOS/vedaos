@@ -64,11 +64,12 @@ modules:
       cleanup: true
       copr:
         - bazzite-org/bazzite
-        - bazzite-org/bazzite-multilib
     install:
       packages:
-        - gamescope-session-plus
-        - gamescope-session-steam
+        - repo: copr:copr.fedorainfracloud.org:bazzite-org:bazzite
+          packages:
+            - gamescope-session-plus
+            - gamescope-session-steam
 
   - type: initramfs
 

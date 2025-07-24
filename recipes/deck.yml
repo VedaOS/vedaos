@@ -60,6 +60,11 @@ modules:
       - "curl -Lo /usr/share/gamescope-session-plus/bootstrap_steam.tar.gz https://large-package-sources.nobaraproject.org/bootstrap_steam.tar.gz"
 
   - type: dnf
+    repos:
+      cleanup: true
+      copr:
+        - bazzite-org/bazzite
+        - bazzite-org/bazzite-multilib
     install:
       packages:
         - gamescope-session-plus

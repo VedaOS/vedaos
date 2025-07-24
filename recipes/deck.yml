@@ -24,6 +24,7 @@ modules:
         - bazzite-org/bazzite-multilib
         - ublue-os/staging
         - ublue-os/packages
+        - hhd-dev/hhd
         - ycollet/audinux
     install:
       packages:

@@ -80,6 +80,8 @@ modules:
     system:
       enabled:
         - sddm.service
+      disabled:
+        - cosmic-greeter.service
 
   - type: initramfs
 

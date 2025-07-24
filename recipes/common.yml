@@ -40,6 +40,7 @@ modules:
 
   - type: dnf
     repos:
+      cleanup: true
       files:
         - https://negativo17.org/repos/fedora-steam.repo
         - https://pkgs.tailscale.com/stable/fedora/tailscale.repo
@@ -57,6 +58,7 @@ modules:
 
   - type: dnf
     repos:
+      cleanup: true
       copr:
         - bazzite-org/bazzite
         - bazzite-org/bazzite-multilib
@@ -87,6 +89,7 @@ modules:
 
   - type: script
     snippets:
+      - "dnf5 versionlock add ibus"
       - "sed -i 's@/usr/bin/steam@/usr/bin/vedaos-steam@g' /usr/share/applications/steam.desktop"
 
   - type: os-release

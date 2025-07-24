@@ -12,6 +12,19 @@ modules:
   - from-file: common.yml
 
   - type: dnf
+    remove:
+      packages:
+        - jupiter-sd-mounting-btrfs # so it won't conflict with jupiter-hw-support-btrfs
+
+  - type: dnf
+    repos:
+      cleanup: true
+      copr:
+        - bazzite-org/bazzite
+        - bazzite-org/bazzite-multilib
+        - ublue-os/staging
+        - ublue-os/packages
+        - ycollet/audinux
     install:
       packages:
         - jupiter-fan-control

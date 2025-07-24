@@ -26,7 +26,7 @@ modules:
 
   - type: files
     files:
-      - source: system
+      - source: shared
         destination: /
 
   - type: script

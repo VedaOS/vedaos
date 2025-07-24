@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=COSMIC (single time session)
+Comment=This session logs you into COSMIC one time
+Exec=/usr/bin/cosmic-session-oneshot
+TryExec=/usr/bin/cosmic-session-oneshot
+Type=Application
+DesktopNames=COSMIC

@@ -1,6 +1,5 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-# image will be published to ghcr.io/<user>/<name>
 name: vedaos-deck
 description: This is my personal OS image.
 
@@ -10,6 +9,11 @@ image-version: 42
 
 modules:
   - from-file: common.yml
+
+  - type: files
+    files:
+      - source: deck
+        destination: /
 
   - type: dnf
     remove:
@@ -48,6 +52,7 @@ modules:
         - xorg-x11-server-Xvfb
         - python-vdf
         - python-crcmod
+        - sddm
     replace:
       - from-repo: copr:copr.fedorainfracloud.org:bazzite-org:bazzite
         packages:
@@ -70,6 +75,11 @@ modules:
           packages:
             - gamescope-session-plus
             - gamescope-session-steam
+
+  - type: systemd
+    system:
+      enabled:
+        - sddm.service
 
   - type: initramfs
 

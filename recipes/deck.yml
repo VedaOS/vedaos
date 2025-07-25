@@ -10,11 +10,6 @@ image-version: 42
 modules:
   - from-file: common.yml
 
-  - type: files
-    files:
-      - source: deck
-        destination: /
-
   - type: dnf
     remove:
       packages:
@@ -84,5 +79,10 @@ modules:
         - sddm.service
       disabled:
         - cosmic-greeter.service
+
+  - type: files
+    files:
+      - source: deck
+        destination: /
 
   - from-file: finalize.yml

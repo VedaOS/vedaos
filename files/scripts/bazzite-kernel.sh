@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # based on https://github.com/askpng/solarpowered/blob/main/files/scripts/base/bazzite.sh
+# NOTE: this script may break sometimes for some obscure reason, so we have to restart the building of the images
 
 set -ouex pipefail
 

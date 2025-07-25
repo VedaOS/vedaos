@@ -90,15 +90,3 @@ modules:
   - type: script
     snippets:
       - "dnf5 versionlock add ibus"
-      - "sed -i 's@/usr/bin/steam@/usr/bin/vedaos-steam@g' /usr/share/applications/steam.desktop"
-
-  - type: os-release
-    properties:
-      ID: vedaos
-      NAME: VedaOS
-      PRETTY_NAME: VedaOS 42 (FROM Fedora COSMIC Atomic)
-
-  - type: systemd
-    system:
-      enabled:
-      - scx_loader.service

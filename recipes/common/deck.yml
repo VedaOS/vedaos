@@ -46,9 +46,7 @@ modules:
     snippets:
       - "dnf5 versionlock add upower upower-libs"
       - "mkdir -p /usr/share/gamescope-session-plus/"
-      - "curl -Lo /usr/share/gamescope-session-plus/steam.tar.zst https://steamdeck-packages.steamos.cloud/archlinux-mirror/jupiter-main/os/x86_64/steam-jupiter-stable-1.0.0.79-1.5-x86_64.pkg.tar.zst"
-      - "tar -I zstd -xvf /usr/share/gamescope-session-plus/steam.tar.zst usr/lib/steam/bootstraplinux_ubuntu12_32.tar.xz -O > /usr/share/gamescope-session-plus/bootstrap_steam.tar.xz"
-      - "rm /usr/share/gamescope-session-plus/steam.tar.zst" # we replaced nobara's bootstrap with the one by valve themselves, so users shouldn't redownload 1.5gb chunk everytime (not sure how to configure rechunker properly)
+      - "curl --retry 3 -Lo /usr/share/gamescope-session-plus/bootstrap_steam.tar.gz https://large-package-sources.nobaraproject.org/bootstrap_steam.tar.gz"
 
   - type: dnf
     repos:

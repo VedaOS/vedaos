@@ -1,6 +1,6 @@
 ---
 # yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-name: vedaos
+name: vedaos-deck
 description: This is my personal OS image.
 
 base-image: ghcr.io/ublue-os/cosmic-atomic-main
@@ -8,6 +8,8 @@ base-image: ghcr.io/ublue-os/cosmic-atomic-main
 image-version: 42
 
 modules:
-  - from-file: common.yml
+  - from-file: common/common.yml
 
-  - from-file: finalize.yml
+  - from-file: common/deck.yml
+
+  - from-file: common/finalize.yml

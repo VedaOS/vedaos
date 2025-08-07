@@ -1,5 +1,9 @@
-name: bluebuild
+name: bluebuild testing
 on:
+  push:
+    paths-ignore: # don't rebuild if only documentation has changed
+      - "**.md"
+
   workflow_dispatch: # allow manually triggering builds
 concurrency:
   # only run one build at a time
@@ -18,8 +22,8 @@ jobs:
       matrix:
         recipe:
           # !! Add your recipes here
-          - recipe-deck.yml
-          - recipe-desktop.yml
+          - recipe-deck-testing.yml
+          - recipe-desktop-testing.yml
     steps:
       # the build is fully handled by the reusable github action
       - name: Build Custom Image

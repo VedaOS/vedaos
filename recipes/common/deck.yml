@@ -1,15 +1,4 @@
----
-# yaml-language-server: $schema=https://schema.blue-build.org/recipe-v1.json
-name: vedaos-deck
-description: This is my personal OS image.
-
-base-image: ghcr.io/ublue-os/cosmic-atomic-main
-# TODO: replace base image with upstream
-image-version: 42
-
 modules:
-  - from-file: common.yml
-
   - type: dnf
     remove:
       packages:
@@ -84,5 +73,3 @@ modules:
     files:
       - source: deck
         destination: /
-
-  - from-file: finalize.yml

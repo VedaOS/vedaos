@@ -26,7 +26,6 @@ modules:
         - adobe-source-code-pro-fonts
         - avahi
         - dconf
-        - dnf5-plugins
         - fprintd-pam
         - gdm
         - glib-networking

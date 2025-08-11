@@ -9,7 +9,7 @@ modules:
     properties:
       ID: vedaos
       NAME: VedaOS
-      PRETTY_NAME: VedaOS 42 (FROM Fedora COSMIC Atomic)
+      PRETTY_NAME: VedaOS (FROM Fedora Atomic)
 
   - type: systemd
     system:

@@ -14,7 +14,13 @@ modules:
   - type: systemd
     system:
       enabled:
-      - scx_loader.service
+        - scx_loader.service
+      disabled:
+        - akmods-keygen@akmods-keygen.service
+        - akmods-keygen.target
+      masked:
+        - akmods-keygen@akmods-keygen.service
+        - akmods-keygen.target
 
   - type: initramfs
 

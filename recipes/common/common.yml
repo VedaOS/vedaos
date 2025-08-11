@@ -4,6 +4,10 @@ modules:
       - "curl -fsSL https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo | tee /etc/yum.repos.d/terra.repo"
 
   - type: dnf
+    repos:
+      cleanup: true
+      copr:
+        - bieszczaders/kernel-cachyos-addons
     install:
       install-weak-deps: false
       packages:
@@ -60,6 +64,7 @@ modules:
         - xdg-desktop-portal-gnome
         - xdg-desktop-portal-gtk
         - xdg-user-dirs-gtk
+        - scx-scheds
     remove:
       auto-remove: false
       packages:
@@ -71,15 +76,6 @@ modules:
         - kernel-tools
         - kernel-tools-libs
         - kernel-uki-virt
-
-  - type: dnf
-    repos:
-      cleanup: true
-      copr:
-        - bieszczaders/kernel-cachyos-addons
-    install:
-      packages:
-        - scx-scheds
 
   - type: script
     scripts:
@@ -113,6 +109,9 @@ modules:
         - ublue-os/packages
     install:
       packages:
+        - repo: copr:copr.fedorainfracloud.org:bazzite-org:bazzite
+          packages:
+            - ibus
         - bazaar
         - gamescope.x86_64
         - gamescope-libs.x86_64
@@ -129,10 +128,6 @@ modules:
         - vkBasalt.i686
         - mangohud.x86_64
         - mangohud.i686
-    replace:
-      - from-repo: copr:copr.fedorainfracloud.org:bazzite-org:bazzite
-        packages:
-          - ibus
 
   - type: script
     snippets:

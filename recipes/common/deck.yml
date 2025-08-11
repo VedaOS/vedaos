@@ -67,7 +67,7 @@ modules:
       enabled:
         - sddm.service
       disabled:
-        - cosmic-greeter.service
+        - gdm.service
 
   - type: files
     files:

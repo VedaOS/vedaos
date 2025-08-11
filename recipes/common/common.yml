@@ -59,6 +59,7 @@ modules:
         - xdg-desktop-portal-gtk
         - xdg-user-dirs-gtk
         - scx-scheds
+        - flatpak
     remove:
       auto-remove: false
       packages:

@@ -60,6 +60,9 @@ modules:
         - xdg-user-dirs-gtk
         - scx-scheds
         - flatpak
+        - flatpak-spawn
+        - distrobox
+        - htop
     remove:
       auto-remove: false
       packages:

@@ -15,6 +15,7 @@ modules:
     system:
       enabled:
         - scx_loader.service
+        - podman.socket
       disabled:
         - akmods-keygen@akmods-keygen.service
         - akmods-keygen.target

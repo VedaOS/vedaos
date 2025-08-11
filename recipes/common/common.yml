@@ -128,6 +128,8 @@ modules:
         - vkBasalt.i686
         - mangohud.x86_64
         - mangohud.i686
+        - desktop-file-utils
+        - python3-gobject
 
   - type: script
     snippets:

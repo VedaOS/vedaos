@@ -1,8 +1,4 @@
 modules:
-  - type: script
-    snippets:
-      - "curl -fsSL https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo | tee /etc/yum.repos.d/terra.repo"
-
   - type: dnf
     repos:
       cleanup: true
@@ -11,7 +7,6 @@ modules:
     install:
       install-weak-deps: false
       packages:
-        - terra-release
         - iwd
         - adwaita-sans-fonts
         - ModemManager
@@ -75,6 +70,15 @@ modules:
         - kernel-tools
         - kernel-tools-libs
         - kernel-uki-virt
+
+  - type: script
+    snippets:
+      - "curl -fsSL https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo | tee /etc/yum.repos.d/terra.repo"
+
+  - type: dnf
+    install:
+      packages:
+        - terra-release
 
   - type: script
     scripts:

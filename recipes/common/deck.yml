@@ -46,7 +46,9 @@ modules:
     snippets:
       - "dnf5 versionlock add upower upower-libs"
       - "mkdir -p /usr/share/gamescope-session-plus/"
-      - "curl --retry 3 -Lo /usr/share/gamescope-session-plus/bootstrap_steam.tar.gz https://large-package-sources.nobaraproject.org/bootstrap_steam.tar.gz"
+      - "curl -Lo /usr/share/gamescope-session-plus/steam.tar.zst https://steamdeck-packages.steamos.cloud/archlinux-mirror/jupiter-main/os/x86_64/steam-jupiter-stable-1.0.0.79-1.5-x86_64.pkg.tar.zst"
+      - "tar -I zstd -xvf /usr/share/gamescope-session-plus/steam.tar.zst usr/lib/steam/bootstraplinux_ubuntu12_32.tar.xz -O > /usr/share/gamescope-session-plus/bootstrap_steam.tar.gz"
+      - "rm /usr/share/gamescope-session-plus/steam.tar.zst" # since rechunker hardcodes steam bootstrap path to tar.gz file, we had to use that path instead despite it being tar.xz archive
 
   - type: dnf
     repos:

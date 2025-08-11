@@ -3,7 +3,7 @@
 name: vedaos-deck
 description: This is my personal OS image.
 
-base-image: ghcr.io/ublue-os/cosmic-atomic-main
+base-image: quay.io/fedora/fedora-bootc
 # TODO: replace base image with upstream
 image-version: 42
 alt-tags:

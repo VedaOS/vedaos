@@ -1,13 +1,65 @@
 modules:
+  - type: script
+    snippets:
+      - "curl -fsSL https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo | tee /etc/yum.repos.d/terra.repo"
+
   - type: dnf
-    repos:
-      cleanup: true
-      copr:
-        - bieszczaders/kernel-cachyos-addons
     install:
+      install-weak-deps: false
       packages:
-        - scx-scheds
+        - terra-release
+        - iwd
+        - adwaita-sans-fonts
+        - ModemManager
+        - NetworkManager-adsl
+        - NetworkManager-openconnect-gnome
+        - NetworkManager-openvpn-gnome
+        - NetworkManager-ppp
+        - NetworkManager-pptp-gnome
+        - NetworkManager-ssh-gnome
+        - NetworkManager-vpnc-gnome
+        - NetworkManager-wwan
+        - adobe-source-code-pro-fonts
+        - avahi
+        - dconf
         - dnf5-plugins
+        - fprintd-pam
+        - gdm
+        - glib-networking
+        - gnome-backgrounds
+        - gnome-bluetooth
+        - gnome-color-manager
+        - gnome-connections
+        - gnome-control-center
+        - gnome-disk-utility
+        - gnome-epub-thumbnailer
+        - gnome-initial-setup
+        - gnome-remote-desktop
+        - gnome-session-wayland-session
+        - gnome-settings-daemon
+        - gnome-shell
+        - gvfs-afc
+        - gvfs-afp
+        - gvfs-archive
+        - gvfs-fuse
+        - gvfs-goa
+        - gvfs-gphoto2
+        - gvfs-mtp
+        - gvfs-smb
+        - libsane-hpaio
+        - localsearch
+        - mesa-dri-drivers
+        - nautilus
+        - polkit
+        - ptyxis
+        - rygel
+        - sane-backends-drivers-scanners
+        - systemd-oomd-defaults
+        - tinysparql
+        - xdg-desktop-portal
+        - xdg-desktop-portal-gnome
+        - xdg-desktop-portal-gtk
+        - xdg-user-dirs-gtk
     remove:
       auto-remove: false
       packages:
@@ -20,6 +72,15 @@ modules:
         - kernel-tools-libs
         - kernel-uki-virt
 
+  - type: dnf
+    repos:
+      cleanup: true
+      copr:
+        - bieszczaders/kernel-cachyos-addons
+    install:
+      packages:
+        - scx-scheds
+
   - type: script
     scripts:
       - bazzite-kernel.sh
@@ -28,15 +89,6 @@ modules:
     files:
       - source: shared
         destination: /
-
-  - type: script
-    snippets:
-      - "curl -fsSL https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo | tee /etc/yum.repos.d/terra.repo"
-
-  - type: dnf
-    install:
-      packages:
-        - terra-release
 
   - type: dnf
     repos:
@@ -50,11 +102,6 @@ modules:
         - steam
         - extest.i686
         - tailscale
-    remove:
-      packages:
-        - firefox
-        - firefox-langpacks
-        - htop
 
   - type: dnf
     repos:

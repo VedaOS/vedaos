@@ -7,9 +7,7 @@ if [ ! -d $HOME/.local/share/Steam ]; then
 # Set up steam with the bootstrap before starting it, this allows steam to run for the first time even with no network access
     if [[ -f "/usr/share/gamescope-session-plus/bootstrap_steam.tar.gz" ]]; then
         mkdir -p ~/.local/share/Steam
-        cp /usr/share/gamescope-session-plus/bootstrap_steam.tar.gz ~/.local/share/Steam/bootstrap_steam.tar.xz # gz > xz
-        tar xf ~/.local/share/Steam/bootstrap_steam.tar.xz -C ~/.local/share/Steam
-        rm ~/.local/share/Steam/bootstrap_steam.tar.xz
+        tar xf /usr/share/gamescope-session-plus/bootstrap_steam.tar.gz -C ~/.local/share/Steam
     fi
 fi
 

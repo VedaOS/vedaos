@@ -6,9 +6,7 @@ function short_session_recover {
     rm -rf --one-file-system ~/.local/share/Steam/config/widevine
     # extract the steam bootstrap to potentially fix the issue the next boot
     if [[ -f "/usr/share/gamescope-session-plus/bootstrap_steam.tar.gz" ]]; then
-        cp /usr/share/gamescope-session-plus/bootstrap_steam.tar.gz ~/.local/share/Steam/bootstrap_steam.tar.xz # gz > xz
-        tar xf ~/.local/share/Steam/bootstrap_steam.tar.xz -C ~/.local/share/Steam
-        rm ~/.local/share/Steam/bootstrap_steam.tar.xz
+        tar xf /usr/share/gamescope-session-plus/bootstrap_steam.tar.gz -C ~/.local/share/Steam
     fi
     # change session to desktop as fallback
     steamos-session-select desktop
@@ -122,8 +120,8 @@ export CLIENTCMD="steam -gamepadui -steamos3 -steampal -steamdeck"
 touch "${HOME}"/.steam/root/config/SteamAppData.vdf || true
 
 if [[ -f "/usr/share/gamescope-session-plus/bootstrap_steam.tar.gz" ]] && ! grep -q "set_bootstrap=1" "$STEAM_BOOTSTRAP_CONFIG"; then
-    mkdir -p ~/.local/share
-    tar xf /usr/share/gamescope-session-plus/bootstrap_steam.tar.gz -C ~/.local/share
+    mkdir -p ~/.local/share/Steam
+    tar xf /usr/share/gamescope-session-plus/bootstrap_steam.tar.gz -C ~/.local/share/Steam
     echo "set_bootstrap=1" >> "$STEAM_BOOTSTRAP_CONFIG"
 fi
 

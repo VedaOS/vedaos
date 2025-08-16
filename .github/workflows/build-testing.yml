@@ -1,4 +1,4 @@
-name: bluebuild testing
+name: Build VedaOS (Testing)
 on:
   push:
     paths-ignore: # don't rebuild if only documentation has changed

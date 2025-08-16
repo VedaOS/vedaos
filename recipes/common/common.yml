@@ -100,7 +100,7 @@ modules:
 
   - type: files
     files:
-      - source: shared
+      - source: system_files/shared
         destination: /
 
   - type: dnf

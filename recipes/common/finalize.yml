@@ -8,6 +8,7 @@ modules:
   - type: os-release
     properties:
       ID: vedaos
+      ID_LIKE: fedora
       NAME: VedaOS
       PRETTY_NAME: VedaOS (FROM Fedora Atomic)
 
